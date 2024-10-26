@@ -21,13 +21,15 @@ from config import *
 import sys
 import re
 import os
+import httpx
+import yt_dlp
 
 bot = Client("bot",
              bot_token= "7411835985:AAFwinmwg-WSw7C5SJC6qN81U0TV2bLT5B8",
              api_id=23455230,
              api_hash= "1740e4541ec18b9cdd3e5ff6f3687d46")
 
-
+cookies_file_path = "cookies/cookies.txt"
 @bot.on_message(filters.command(["start"]) & filters.user(ADMINS))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"HELLO I AM TXT DOWNLOADER BOT MADE BY PARADISE [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /Paradise")
@@ -178,7 +180,7 @@ async def account_login(bot: Client, m: Message):
             if "jw-prod" in url:
                 cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
             else:
-                cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
+                cmd = f"yt-dlp --cookies '{cookies_file_path}' -f '{ytf}' '{url}' -o '{name}.mp4'"
 
             try:                               
                 cc = f'[ 🎬 ] Vid ID : {str(count).zfill(3)}\n\n**Video Title : {name1}({res}) @MAIPARADISEHOON.mp4\n\n**Batch Name : {b_name}\n\n**Extracted By ➤** {CR}'
