@@ -15,7 +15,10 @@
         },
         {
             "url": "heroku/python"
-        }
+        },
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview.git"
+        }   
     ],
     "keywords": [
 
@@ -32,7 +35,7 @@
         "BOT_TOKEN": {
 
             "description": "Your Bot token from @Botfather",
-            "value": "7411835985:AAFwinmwg-WSw7C5SJC6qN81U0TV2bLT5B8"
+            "value": "7261086621:AAGXBRshSj2opnkTQczP_lyKqPK-LouCsOc"
 
         },
 
@@ -61,7 +64,10 @@
         },
        {
             "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
-        }
+        },
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview.git"
+        }   
 
     ]
 
