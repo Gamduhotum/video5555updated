@@ -23,6 +23,19 @@ import re
 import os
 import httpx
 import yt_dlp
+from fastapi import FastAPI
+import threading, uvicorn
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"status": "Bot is running"}
+
+def start_server():
+    uvicorn.run(app, host="0.0.0.0", port=10000)
+
+threading.Thread(target=start_server).start()
 
 bot = Client("bot",
              bot_token= "6837671977:AAHb0Ln65PbTNctngvcjNJ7lYtHhTOAKP0s",
